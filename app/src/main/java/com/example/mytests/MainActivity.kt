@@ -118,7 +118,7 @@ fun FilledCardExample() {
             .size(width = 256.dp, height = 116.dp)
     ) {
         Text(
-            text = "Filledd",
+            text = "Filled",
             modifier = Modifier
                 .padding(16.dp),
             textAlign = TextAlign.Center,
