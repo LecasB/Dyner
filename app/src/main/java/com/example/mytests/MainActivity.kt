@@ -76,7 +76,7 @@ class MainActivity : ComponentActivity() {
                         Spacer(modifier = Modifier.weight(0.5f))
 
                         Row {
-                           FormLogin()
+                           FormSignUp()
                         }
                         Spacer(modifier = Modifier.weight(1f))
 
@@ -176,22 +176,32 @@ fun MyFormButton() {
 
 @Preview(showBackground = true)
 @Composable
-fun FormLogin(modifier: Modifier = Modifier) {
+fun FormSignUp(modifier: Modifier = Modifier) {
 
     Column (
         Modifier
-            .padding(0.dp)
-            .width(297.dp)
-            .height(270.dp),
+
+                .fillMaxSize()
+            .padding(16.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Row {
-            Input(0, "User/email")
+        Row(
+            modifier = Modifier
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceAround
+        ) {
+            Input(0, "First Name", modifier = modifier.weight(1f))
+            Spacer(modifier = Modifier.width(16.dp))
+            Input(0, "Last Name", modifier = modifier.weight(1f))
         }
         Spacer(modifier = Modifier.height(12.dp))
         Row {
-            Input(1, "Password")
+            Input(1, "Password", modifier = modifier.fillMaxWidth())
+        }
+        Spacer(modifier = Modifier.height(12.dp))
+        Row {
+            Input(1, "Confirm Password", modifier = modifier.fillMaxWidth())
         }
         Row(Modifier.fillMaxWidth().padding(0.dp), horizontalArrangement = Arrangement.Start){
             CheckBoxFunc("Remember me")

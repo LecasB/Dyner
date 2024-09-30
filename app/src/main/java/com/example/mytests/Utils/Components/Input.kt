@@ -1,6 +1,7 @@
 package com.example.mytests.Utils.Components
 
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -15,7 +16,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 
 // 1 - Password || 0 - Normal
 @Composable
-fun Input(myTextFieldType: Int, myTextFieldLabel: String) {
+fun Input(myTextFieldType: Int, myTextFieldLabel: String, modifier: Modifier) {
     var textField by remember { mutableStateOf("") };
 
     TextField(
@@ -23,8 +24,11 @@ fun Input(myTextFieldType: Int, myTextFieldLabel: String) {
         onValueChange = { newText ->
             textField = newText
         },
-        Modifier.fillMaxWidth(),
+
+        modifier = modifier,
         label = { Text(myTextFieldLabel) },
         visualTransformation = if (myTextFieldType == 1) PasswordVisualTransformation() else VisualTransformation.None
+
+
     )
 }

@@ -18,8 +18,8 @@ import androidx.compose.ui.unit.sp
 fun ButtonComp() {
     Button(
         onClick = { /* Handle click here */ },
-        modifier = Modifier.border(width = 0.dp, color = Color(0xFF000000), shape = RoundedCornerShape(size = 5.dp))
-            .width(297.dp)
+        modifier = Modifier
+            .fillMaxWidth()  // Fills the available width of its parent
             .height(44.dp),
         shape = RoundedCornerShape(size = 5.dp),
         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFDA492F))
