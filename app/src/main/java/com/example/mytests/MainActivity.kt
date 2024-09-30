@@ -49,9 +49,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.mytests.Utils.Components.ButtonComp
 import com.example.mytests.Utils.Components.CheckBoxFunc
 import com.example.mytests.Utils.Components.Input
-import com.example.mytests.Utils.Components.MyFormButton
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -197,7 +197,7 @@ fun FormLogin(modifier: Modifier = Modifier) {
             CheckBoxFunc("Remember me")
         }
         Row{
-            MyFormButton()
+            ButtonComp()
         }
         Spacer(modifier = Modifier.height(12.dp))
         Row {

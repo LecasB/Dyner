@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.sp
 
 
 @Composable
-fun MyFormButton() {
+fun ButtonComp() {
     Button(
         onClick = { /* Handle click here */ },
         modifier = Modifier.border(width = 0.dp, color = Color(0xFF000000), shape = RoundedCornerShape(size = 5.dp))
