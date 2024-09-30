@@ -49,6 +49,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.mytests.Utils.Components.CheckBoxFunc
+import com.example.mytests.Utils.Components.Input
+import com.example.mytests.Utils.Components.MyFormButton
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -126,6 +129,7 @@ fun FilledCardExample() {
     }
 }
 
+/*
 @Composable
 fun MyTextField(myTextFieldType: Int, myTextFieldLabel: String) {
     var textField by remember { mutableStateOf("") };
@@ -152,9 +156,7 @@ fun MyCheckBox() {
         Checkbox(checkedState.value, onCheckedChange = { checkedState.value = it })
         Text("Remember me")
     }
-
 }
-
 
 @Composable
 fun MyFormButton() {
@@ -170,6 +172,7 @@ fun MyFormButton() {
         Text("Log In", style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight(400)))
     }
 }
+*/
 
 @Preview(showBackground = true)
 @Composable
@@ -184,14 +187,14 @@ fun FormLogin(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Row {
-            MyTextField(0, "Login aqui")
+            Input(0, "User/email")
         }
         Spacer(modifier = Modifier.height(12.dp))
         Row {
-            MyTextField(1, "Pass aqui")
+            Input(1, "Password")
         }
         Row(Modifier.fillMaxWidth().padding(0.dp), horizontalArrangement = Arrangement.Start){
-            MyCheckBox()
+            CheckBoxFunc("Remember me")
         }
         Row{
             MyFormButton()
