@@ -85,7 +85,7 @@ class MainActivity : ComponentActivity() {
                             .padding(16.dp),
                             horizontalArrangement = Arrangement.Center,
                             verticalAlignment = Alignment.Bottom) {
-                            Text("Sign Up Now!", color = Color.Red, style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight(400)))
+                            Text("Log In!", color = Color.Red, style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight(400)))
                         }
                     }
                 }
@@ -180,9 +180,9 @@ fun FormSignUp(modifier: Modifier = Modifier) {
 
     Column (
         Modifier
-
-                .fillMaxSize()
-            .padding(16.dp),
+            .padding(0.dp)
+            .width(297.dp)
+            .height(270.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -203,22 +203,14 @@ fun FormSignUp(modifier: Modifier = Modifier) {
         Row {
             Input(1, "Confirm Password", modifier = modifier.fillMaxWidth())
         }
-        Row(Modifier.fillMaxWidth().padding(0.dp), horizontalArrangement = Arrangement.Start){
-            CheckBoxFunc("Remember me")
-        }
+        Spacer(modifier = Modifier.height(12.dp))
         Row{
-            ButtonComp()
+            ButtonComp(text = "Sign Up")
         }
         Spacer(modifier = Modifier.height(12.dp))
-        Row {
-            Row(Modifier.fillMaxWidth().padding(0.dp),
-                horizontalArrangement = Arrangement.Start,
-                verticalAlignment = Alignment.CenterVertically){
-                Text("Forgot Password", color = Color.Red)
-            }
         }
     }
-}
+
 
 
 

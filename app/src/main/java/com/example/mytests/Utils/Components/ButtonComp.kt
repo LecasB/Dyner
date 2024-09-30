@@ -15,16 +15,16 @@ import androidx.compose.ui.unit.sp
 
 
 @Composable
-fun ButtonComp() {
+fun ButtonComp(text: String) {
     Button(
         onClick = { /* Handle click here */ },
         modifier = Modifier
             .fillMaxWidth()  // Fills the available width of its parent
-            .height(44.dp),
+            .height(50.dp),
         shape = RoundedCornerShape(size = 5.dp),
         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFDA492F))
     ) {
-        Text("Log In", style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight(400)))
+        Text(text, style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight(400)))
     }
 }
 
