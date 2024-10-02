@@ -52,6 +52,7 @@ import androidx.compose.ui.unit.sp
 import com.example.mytests.Utils.Components.ButtonComp
 import com.example.mytests.Utils.Components.CheckBoxFunc
 import com.example.mytests.Utils.Components.Input
+import com.example.mytests.screens.LoginPage
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,159 +61,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyTestsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Column(
-                        Modifier.padding(innerPadding).fillMaxSize(),
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally
-                        )
-                    {
-                        Spacer(modifier = Modifier.weight(0.5f))
-                        Image(
-                            painter = painterResource(id = R.drawable.dyner), // Replace with your drawable resource
-                            contentDescription = "Sample Image",
-                            Modifier.scale(1.8f)
-
-                        )
-                        Spacer(modifier = Modifier.weight(0.5f))
-
-                        Row {
-                           FormLogin()
-                        }
-                        Spacer(modifier = Modifier.weight(1f))
-
-                        Row(modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(16.dp),
-                            horizontalArrangement = Arrangement.Center,
-                            verticalAlignment = Alignment.Bottom) {
-                            Text("Sign Up Now!", color = Color.Red, style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight(400)))
-                        }
-                    }
+                    LoginPage(innerPadding)
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-//@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MyTestsTheme {
-        Greeting("Android")
-    }
-}
-
-
-@Composable
-fun FilledCardExample() {
-    Card(
-        colors = CardDefaults.cardColors(
-            containerColor = Color.Red,
-        ),
-        modifier = Modifier
-            .size(width = 256.dp, height = 116.dp)
-    ) {
-        Text(
-            text = "Filled",
-            modifier = Modifier
-                .padding(16.dp),
-            textAlign = TextAlign.Center,
-        )
-    }
-}
-
-/*
-@Composable
-fun MyTextField(myTextFieldType: Int, myTextFieldLabel: String) {
-    var textField by remember { mutableStateOf("") };
-
-    TextField(
-        value = textField,
-        onValueChange = { newText ->
-            textField = newText
-        },
-        Modifier.fillMaxWidth(),
-        label = { Text(myTextFieldLabel) },
-        visualTransformation = if (myTextFieldType == 1) PasswordVisualTransformation() else VisualTransformation.None
-    )
-}
-
-@Composable
-fun MyCheckBox() {
-    val checkedState = remember { mutableStateOf(true) }
-
-    Row(Modifier.fillMaxWidth().padding(0.dp),
-        horizontalArrangement = Arrangement.Start,
-        //horizontalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterHorizontally),
-        verticalAlignment = Alignment.CenterVertically) {
-        Checkbox(checkedState.value, onCheckedChange = { checkedState.value = it })
-        Text("Remember me")
-    }
-}
-
-@Composable
-fun MyFormButton() {
-    Button(
-        onClick = { /* Handle click here */ },
-        modifier = Modifier
-            .border(width = 0.dp, color = Color(0xFF000000), shape = RoundedCornerShape(size = 5.dp))
-            .width(297.dp)
-            .height(44.dp),
-        shape = RoundedCornerShape(size = 5.dp),
-        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFDA492F)),
-    ) {
-        Text("Log In", style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight(400)))
-    }
-}
-*/
-
-@Preview(showBackground = true)
-@Composable
-fun FormLogin(modifier: Modifier = Modifier) {
-
-    Column (
-        Modifier
-            .padding(0.dp)
-            .width(297.dp)
-            .height(270.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Row {
-            Input(0, "User/email")
-        }
-        Spacer(modifier = Modifier.height(12.dp))
-        Row {
-            Input(1, "Password")
-        }
-        Row(Modifier.fillMaxWidth().padding(0.dp), horizontalArrangement = Arrangement.Start){
-            CheckBoxFunc("Remember me")
-        }
-        Row{
-            ButtonComp()
-        }
-        Spacer(modifier = Modifier.height(12.dp))
-        Row {
-            Row(Modifier.fillMaxWidth().padding(0.dp),
-                horizontalArrangement = Arrangement.Start,
-                verticalAlignment = Alignment.CenterVertically){
-                Text("Forgot Password", color = Color.Red)
-            }
-        }
-    }
-}
-
-
-
-
-/*modifier = Modifier.fillMaxWidth(),
-verticalAlignment = Alignment.CenterVertically,
-horizontalArrangement = Arrangement.Center*/

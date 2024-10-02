@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.sp
 
 
 @Composable
-fun ButtonComp() {
+fun ButtonComp(text: String) {
     Button(
         onClick = { /* Handle click here */ },
         modifier = Modifier.border(width = 0.dp, color = Color(0xFF000000), shape = RoundedCornerShape(size = 5.dp))
@@ -24,7 +24,7 @@ fun ButtonComp() {
         shape = RoundedCornerShape(size = 5.dp),
         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFDA492F))
     ) {
-        Text("Log In", style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight(400)))
+        Text(text, style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight(400)))
     }
 }
 
